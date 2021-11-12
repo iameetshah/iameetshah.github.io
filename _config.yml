@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
     2021 © Meet Shah. Focused on developing robust code in iOS domain since 2014
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  iameetshah
+github_username: iameetshah
 social-stackoverflow: 5272400
 social-github: iameetshah
 social-linkedin: iameetshah
