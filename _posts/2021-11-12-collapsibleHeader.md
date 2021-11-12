@@ -13,7 +13,7 @@ which will be informative and helpful to someone new to SwiftUI.
 
 Final Result :
 
-![screenshot1](../assets/collapsibleList.png){: width="280" } ![screenshot2](assets/collapsibleListSearch.png){: width="280" }
+![screenshot1](.../assets/collapsibleList.png){: width="280" } ![screenshot2](.../assets/collapsibleListSearch.png){: width="280" }
 
 Let’s get started by creating a struct for Header which conforms to Identifiable protocol
 
