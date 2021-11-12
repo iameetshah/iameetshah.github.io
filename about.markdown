@@ -4,6 +4,8 @@ title: About
 permalink: /about/
 ---
 ![screenshot3](../../../../assets/Meet.jpeg){: width="280" }
+
+
 I am a iOS Developer based in India, focused on developing robust code since 2014. 
 I like to share posts with solutions related to issues faced during development apart from creating sample-projects
 
