@@ -6,7 +6,7 @@ category: Jekyll
 layout: post
 ---
 
-I have been searching for a tutorial in SwiftUI which explains how to make an expandable header 
+I have been searching for a tutorial in SwiftUI which explains how to make an collapsible header 
 which also allows search within sub header and after going through many articles, 
 finally managed to understand and got it working. So I decided to write an article 
 which will be informative and helpful to someone new to SwiftUI.
@@ -15,7 +15,7 @@ Final Result :
 
 ![screenshot1](../../../../assets/collapsibleList.png){: width="280" } ![screenshot2](../../../../assets/collapsibleListSearch.png){: width="280" }
 
-Let’s get started by creating a struct for Header which conforms to Identifiable protocol
+Let’s get started by creating a struct for `Header` which conforms to `Identifiable` protocol
 
 ```swift
 struct HeaderItem :Identifiable {
@@ -26,18 +26,18 @@ let subHeader:[SubHeaderItem]// One or more items displayed on collapse
 }
 ```
 
-Moving to next step by creating struct for SubHeaderItem i.e. items to be displayed on tapping the header :
+Moving to next step by creating struct for SubHeaderItem i.e. items to be displayed on collapse (i.e.tapping the header) :
 
 ```swift
 struct SubHeaderItem:Identifiable {
 let id: Int
-let name: String // To be displayed on expanding
+let name: String // To be displayed on collapse
 let otherPropery: String // as per your structure -- not needed
 }
 ```
 
 Now, since both HeaderItem and SubHeaderItem are created we can start with creating a View in SwiftUI,
-let’s name it MenuView :
+let’s name it `MenuView` :
 
 ```swift
 struct MenuView: View {
@@ -53,15 +53,15 @@ var headerItem:[HeaderItem]!
 }
 ```
 
-We have used a ScrollView with ForEach to loop through each of the HeaderItem and display each header name using Text View. 
+In above code, We have used a ScrollView with ForEach to loop through each of the HeaderItem and display each header name using Text View. 
 Pretty simple, right?
 
 Before we create SubMenuView, we need to first understand how to differentiate between selection of items i.e. 
 how can we provide user an option to select header or one of the items from Sub Header. So we will create a 
 Text View with “Select all” to indicate that header(in other words, all items belonging to that header) are selected 
-and Text View with that sub header name to indicate the respective Sub-Header Item is selected. 
+and Text View with sub header name to indicate the respective `SubHeaderItem` is selected. 
 Next, we also need to add an arrow next to the header name which will expand /collapse on user’s tap. 
-Now that we have clear understanding of what needs to be done we can start creating the SubMenuView :
+Now that we have clear understanding of what needs to be done we can start creating the `SubMenuView` :
 
 ```swift
 struct SubMenuView: View {
@@ -86,7 +86,6 @@ struct SubMenuView: View {
                 Spacer()
                 Image("arrow_expand").rotationEffect(.degrees(isExpanded ? 90 : 270))
             }
-            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
             .contentShape(Rectangle())
             .onTapGesture {
                 isExpanded.toggle() // To expand/collapse based on user's tap
@@ -129,8 +128,8 @@ struct SubMenuView: View {
 }
 ```
 
-As you might have noticed in above snippet there is a variable “searchText”. Yes, thats right now we move to next step i.e. Search Functionality.
-As always we need to take a step and first understand what needs to be done to implement search functionality of Sub header items. 
+As you might have noticed in above snippet there is a variable `“searchText”`. Yes, thats right now we move to next step i.e. Search Functionality.
+As always we need to take a step back and first understand what needs to be done to implement search functionality of Sub header items. 
 First and foremost, we need a create a view for SearchBar. So let’s create that :
 
 ```swift
@@ -181,8 +180,8 @@ struct SearchBar: View {
 ```
 
 Now we need to go back to MenuItem View and add above SearchBar in its View hierarchy. Also we need to add 
-a menuFilter function which will filter HeaderItem based on searchText so that only those HeaderItems are displayed 
-wherein SubHeaderItem contains the searchText.
+a menuFilter function which will filter `HeaderItem` based on searchText so that only those `HeaderItem's` are displayed 
+wherein `SubHeaderItem` contains the searchText.
 
 ```swift
 struct MenuView: View {
@@ -235,7 +234,7 @@ struct ListRowModifier: ViewModifier {
     }
 }
 ```
-Lastly we need to update SubMenuView to filter only those names which contains the searchText.
+Lastly we need to update `SubMenuView` to filter only those names which contains the searchText.
 
 ```swift
 // To filter only those subHeader names containing searchText
