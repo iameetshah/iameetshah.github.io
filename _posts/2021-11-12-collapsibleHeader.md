@@ -15,7 +15,7 @@ Final Result :
 
 ![screenshot1](../../../../assets/collapsibleList.png){: width="280" } ![screenshot2](../../../../assets/collapsibleListSearch.png){: width="280" }
 
-Let’s get started by creating a struct for `Header` which conforms to `Identifiable` protocol
+Let’s get started by creating a struct for `HeaderItem` which conforms to `Identifiable` protocol
 
 ```swift
 struct HeaderItem :Identifiable {
@@ -26,7 +26,7 @@ let subHeader:[SubHeaderItem]// One or more items displayed on collapse
 }
 ```
 
-Moving to next step by creating struct for SubHeaderItem i.e. items to be displayed on collapse (i.e.tapping the header) :
+Moving to next step by creating struct for `SubHeaderItem` i.e. items to be displayed on collapse (i.e.tapping the header) :
 
 ```swift
 struct SubHeaderItem:Identifiable {
@@ -53,15 +53,15 @@ var headerItem:[HeaderItem]!
 }
 ```
 
-In above code, We have used a ScrollView with ForEach to loop through each of the HeaderItem and display each header name using Text View. 
+In above code, We have used a ScrollView with ForEach to loop through each of the `HeaderItem` and display each header name using Text View. 
 Pretty simple, right?
 
-Before we create SubMenuView, we need to first understand how to differentiate between selection of items i.e. 
+Before we create `SubMenuView`, we need to first understand how to differentiate between selection of items i.e. 
 how can we provide user an option to select header or one of the items from Sub Header. So we will create a 
 Text View with “Select all” to indicate that header(in other words, all items belonging to that header) are selected 
 and Text View with sub header name to indicate the respective `SubHeaderItem` is selected. 
 Next, we also need to add an arrow next to the header name which will expand /collapse on user’s tap. 
-Now that we have clear understanding of what needs to be done we can start creating the `SubMenuView` :
+Now that we have a clear understanding of what needs to be done we can start creating the `SubMenuView` :
 
 ```swift
 struct SubMenuView: View {
@@ -130,7 +130,7 @@ struct SubMenuView: View {
 
 As you might have noticed in above snippet there is a variable `“searchText”`. Yes, thats right now we move to next step i.e. Search Functionality.
 As always we need to take a step back and first understand what needs to be done to implement search functionality of Sub header items. 
-First and foremost, we need a create a view for SearchBar. So let’s create that :
+First and foremost, we need a create a view for `SearchBar`. So let’s create that :
 
 ```swift
 struct SearchBar: View {
