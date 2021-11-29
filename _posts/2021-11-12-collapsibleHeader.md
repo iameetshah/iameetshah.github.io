@@ -11,7 +11,7 @@ which also allows search within sub header and after going through many articles
 finally managed to understand and got it working. So I decided to write an article 
 which will be informative and helpful to someone new to SwiftUI.
 
-Final Result :
+**Final Result :**
 
 ![screenshot1](../../../../assets/collapsibleList.png){: width="280" } ![screenshot2](../../../../assets/collapsibleListSearch.png){: width="280" }
 
