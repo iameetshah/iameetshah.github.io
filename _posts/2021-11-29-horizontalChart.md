@@ -29,10 +29,9 @@ Let’s start by creating required categories and associated values for both seg
     let unitsSold2 = [0.5, 2.0, 2.1, 2.3, 15.1, 15.5, 18.4, 44.1]
     let singleLineCategory1 = ["Small Category1", "Medium Category 11", "Medium Category 12", "Medium Category 13", "Small Category2", "Medium Category 14", "Medium Category 15", "Very very Big Category 1"]
     let singleLineCategory2 = ["Medium Category 01", "Medium Category 02", "Small Category1", "Very very Big Category 1", "Small Category2", "Small Category3", "Medium Category 03", "Small Category4"]
-}
 ```
 
-Next we need to create and connect IBOutlets of `HorizontalBarChartView` as  well as `UISegmentedControl`. 
+Next we need to create and connect IBOutlets of `HorizontalBarChartView` and `UISegmentedControl`. 
 Also, Update `viewDidLoad()` method  with target for `segmentControl`:
 
 ```swift
@@ -46,7 +45,7 @@ Also, Update `viewDidLoad()` method  with target for `segmentControl`:
     }
 ```
 
-Now, create `setupGraphSettings()` method inorder to define required graph Configurations/Settings (they are self-explanatory):
+Now, create `setupGraphSettings()` method to define required graph Configurations/Settings (they are self-explanatory):
 
 ```swift
     func setupGraphSettings() {
@@ -93,7 +92,7 @@ Now, create `setupGraphSettings()` method inorder to define required graph Confi
     }
 ```
 
-We need to create 2 helper method `dataSetWith()` to create `BarChartDataSet` as  well as `setupPercentValueFormatter` for formatting values with "%" :
+We need to create 2 helper method `dataSetWith()` to create `BarChartDataSet` and `setupPercentValueFormatter` for formatting values with "%" :
 
 ```swift
     func dataSetWith(entries: [BarChartDataEntry],
@@ -128,6 +127,9 @@ We reset chart data i.e. `hBarChartView.data = nil` in each of these methods and
 `singleLineCategory2` categories in case of `Second` to format X-axis values of Chart. Next we create `arrEntries` for Chart entries and 
 append values by using `unitsSold` for `First` segment & `unitsSold2` for `Second` segment. 
 After creating `BarChartData` from `BarChartDataSet` we notify ChartView of data modification with `hBarChartView.data?.notifyDataChanged()`:
+
+**Note** : This is horizontal bar chart so X-axis are configured to `bottom`. You can change `xAxis.labelPosition = .bottom` 
+within `setupGraphSettings()` method to configure position as per your needs. 
 
 ```swift
     func setDataForSegmentFirst() {
