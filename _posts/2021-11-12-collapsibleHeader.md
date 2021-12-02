@@ -59,8 +59,8 @@ Pretty simple, right?
 Before we create `SubMenuView`, we need to first understand how to differentiate between selection of items i.e. 
 how can we provide user an option to select header or one of the items from Sub Header. So we will create a 
 Text View with “Select all” to indicate that header(in other words, all items belonging to that header) are selected 
-and Text View with sub header name to indicate the respective `SubHeaderItem` is selected. 
-Next, we also need to add an arrow next to the header name which will expand /collapse on user’s tap. 
+and Text View with sub header name to indicate the respective `SubHeaderItem` is being selected. 
+Also, we also need to add an arrow next to the header name which will expand /collapse on user’s tap. 
 Now that we have a clear understanding of what needs to be done we can start creating the `SubMenuView` :
 
 ```swift
@@ -128,7 +128,7 @@ struct SubMenuView: View {
 }
 ```
 
-As you might have noticed in above snippet there is a variable `“searchText”`. Yes, thats right now we move to next step i.e. Search Functionality.
+As you might have noticed in above snippet there is a variable `“searchText”` which indicates the next step i.e. Search Functionality.
 As always we need to take a step back and first understand what needs to be done to implement search functionality of Sub header items. 
 First and foremost, we need a create a view for `SearchBar`. So let’s create that :
 
@@ -243,4 +243,4 @@ Lastly we need to update `SubMenuView` to filter only those names which contains
  })
 ```
 
-Hope above tutorial was informative and useful. You can check the source code on github : [HERE](https://github.com/iameetshah/ExpandableScrollViewWithSearch)
+Hope above post was informative and helpful. You can check the source code on github : [HERE](https://github.com/iameetshah/ExpandableScrollViewWithSearch)
