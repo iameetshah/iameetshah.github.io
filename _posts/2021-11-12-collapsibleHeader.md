@@ -6,7 +6,7 @@ category: Jekyll
 layout: post
 ---
 
-I have been searching for a tutorial in SwiftUI which explains how to make an collapsible header 
+I have been searching for an tutorial in SwiftUI which explains how to make an collapsible header 
 which also allows search within sub header and after going through many articles, 
 finally managed to understand and got it working. So I decided to write an article 
 which will be informative and helpful to someone new to SwiftUI.
@@ -36,7 +36,7 @@ let otherPropery: String // as per your structure -- not needed
 }
 ```
 
-Now, since both HeaderItem and SubHeaderItem are created we can start with creating a View in SwiftUI,
+Now, since both `HeaderItem` and `SubHeaderItem` are created we can start with creating a View in SwiftUI,
 let’s name it `MenuView` :
 
 ```swift
@@ -57,7 +57,7 @@ In above code, We have used a ScrollView with ForEach to loop through each of th
 Pretty simple, right?
 
 Before we create `SubMenuView`, we need to first understand how to differentiate between selection of items i.e. 
-how can we provide user an option to select header or one of the items from Sub Header. So we will create a 
+how can we provide user an option to select header or one of its items. So we will create a 
 Text View with “Select all” to indicate that header(in other words, all items belonging to that header) are selected 
 and Text View with sub header name to indicate the respective `SubHeaderItem` is being selected. 
 Also, we also need to add an arrow next to the header name which will expand /collapse on user’s tap. 
@@ -179,7 +179,7 @@ struct SearchBar: View {
 }
 ```
 
-Now we need to go back to MenuItem View and add above SearchBar in its View hierarchy. Also we need to add 
+Now we need to go back to MenuItem View and add above `SearchBar` in its View hierarchy. Also we need to add 
 a menuFilter function which will filter `HeaderItem` based on searchText so that only those `HeaderItem's` are displayed 
 wherein `SubHeaderItem` contains the searchText.
 
