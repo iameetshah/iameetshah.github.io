@@ -10,7 +10,7 @@ I decided to write an article about [Charts Library](https://github.com/danielgi
 Specifically about how to create a x-axis custom renderer for horizontal bar chart. If we implement 
 horizontal bar chart without x-axis custom renderer, Alignment Issue shown in `Actual Result` will be observed. 
 Inorder to resolve this alignment issue, we need to use x-axis custom renderer 
-(Refer `Expected Result` for output after using x-axis custom renderer).
+(Refer `Expected Result` for screenshots after using x-axis custom renderer).
 
 **Actual Result :**
 
@@ -92,7 +92,7 @@ Now, create `setupGraphSettings()` method to define required graph Configuration
     }
 ```
 
-We need to create 2 helper method `dataSetWith()` to create `BarChartDataSet` and `setupPercentValueFormatter` for formatting values with "%" :
+We need to create 2 helper method `dataSetWith()` to create `BarChartDataSet` and `setupPercentValueFormatter` for formatting values with "%" suffix:
 
 ```swift
     func dataSetWith(entries: [BarChartDataEntry],
@@ -122,10 +122,10 @@ We need to create 2 helper method `dataSetWith()` to create `BarChartDataSet` an
 
 Now we are ready to create methods for updating Chart data based on selected `UISegmentControl`. 
 We have 2 Segments, namely `First` & `Second`. When user taps on `First` segment `setDataForSegmentFirst()` 
-method will be executed, Similarly, When user taps on `Second` segment `setDataForSegmentSecond()` method will be executed. 
-We reset chart data i.e. `hBarChartView.data = nil` in each of these methods and use `singleLineCategory1` categories in case of `First` &
+method will be executed and When user taps on `Second` segment `setDataForSegmentSecond()` method will be executed. 
+We start by resetting chart data i.e. `hBarChartView.data = nil` in each of these methods and use `singleLineCategory1` categories in case of `First` &
 `singleLineCategory2` categories in case of `Second` to format X-axis values of Chart. Next we create `arrEntries` for Chart entries and 
-append values by using `unitsSold` for `First` segment & `unitsSold2` for `Second` segment. 
+append `unitsSold` values for `First` segment & `unitsSold2` for `Second` segment. 
 After creating `BarChartData` from `BarChartDataSet` we notify ChartView of data modification with `hBarChartView.data?.notifyDataChanged()`:
 
 **Note** : This is horizontal bar chart so X-axis are configured to `bottom`. You can change `xAxis.labelPosition = .bottom` 
@@ -207,11 +207,11 @@ so that on intialisation itself Horizontal Bar chart is first configured with re
 ```
 
 If you compile the code and run you will observe the alignment issue mentioned at the start of this article (Refer 'Actual Result' for screenshots). 
-Now, lets amend the code to use Renderer so that we can see the expected result. 
+Now, lets amend the code to use Renderer so that we can get the expected result. 
 
-Inorder to create `CustomHorizontalXAxisRenderer` we need to first jump to the defination of `XAxisRendererHorizontalBarChart` for `drawLabels` method. 
+Inorder to create `CustomHorizontalXAxisRenderer` we need to first jump to the definition of `XAxisRendererHorizontalBarChart` for `drawLabels` method. 
 Next create a new class of `CustomHorizontalXAxisRenderer` which inherits from `XAxisRendererHorizontalBarChart` so we can override the behaviour of how labels are drawn.
-Lastly update the logic by adding following three lines before `drawLabel(` call : - 
+Lastly update the logic by adding following three lines before `drawLabel` call : - 
 
 ```swift
     let maxWidth:CGFloat = 136// Update as per your needs
