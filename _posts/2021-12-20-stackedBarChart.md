@@ -15,6 +15,7 @@ In this article we will look into creating a corner-radius renderer for stacked 
 
 ![screenshot5](../../../../assets/Vertical_Stacked_Chart.png){: width="280" }
 
+
 Let’s start by creating required months and associated values. 
 
 ```swift
@@ -22,47 +23,47 @@ Let’s start by creating required months and associated values.
     let percentages = [52.0, 40.0, 68.0, 100.0, 0.0, 98.0, 75.0, 100.0, 20.0, 10.0, 0.0, 99.0]
 ```
 
-Next we need to create and connect IBOutlets of `barChartView`. 
+Next we need to create and connect IBOutlet of `barChartView`. 
 Now, create `setupVerticalChart()` method to define required graph Configurations/Settings (they are self-explanatory):
 
 ```swift
-       func setupVerticalChart() {
-        // Graph Position
-        barChartView.extraLeftOffset = 0
-        barChartView.extraTopOffset = 0
-        barChartView.extraBottomOffset = 0
-        barChartView.extraRightOffset = 0
-        
-        let xAxis = barChartView.xAxis
-        let rightAxis = barChartView.rightAxis
-        barChartView.leftAxis.enabled = false
-        xAxis.labelPosition = .bottom
-        barChartView.legend.enabled = false
-        barChartView.drawGridBackgroundEnabled = false
-        xAxis.granularity = 1.0
-        xAxis.labelCount = 12
-        
-        barChartView.pinchZoomEnabled = false
-        barChartView.doubleTapToZoomEnabled = false
-        
-        barChartView.backgroundColor = .white
-        
-        // Graph X Axis and Right Axis Color
-        xAxis.axisLineColor = .clear//UIColor.black.withAlphaComponent(0.2)
-        xAxis.gridColor = .clear//UIColor.black.withAlphaComponent(0.2)
-        xAxis.labelTextColor = UIColor.black.withAlphaComponent(0.5)
-        rightAxis.gridColor = .clear//UIColor.black.withAlphaComponent(0.2)
-        rightAxis.axisLineColor = .clear//UIColor.black.withAlphaComponent(0.2)
-        rightAxis.labelTextColor = UIColor.black.withAlphaComponent(0.5)
-        
-        // Graph X Axis and Right Axis Font
-        rightAxis.labelFont = UIFont.systemFont(ofSize: 12)
-        xAxis.labelFont = UIFont.systemFont(ofSize: 12)
-        
-        rightAxis.drawZeroLineEnabled = false
-        rightAxis.drawAxisLineEnabled = false
-        barChartView.delegate = self
-    }
+    func setupVerticalChart() {
+    // Graph Position
+    barChartView.extraLeftOffset = 0
+    barChartView.extraTopOffset = 0
+    barChartView.extraBottomOffset = 0
+    barChartView.extraRightOffset = 0
+    
+    let xAxis = barChartView.xAxis
+    let rightAxis = barChartView.rightAxis
+    barChartView.leftAxis.enabled = false
+    xAxis.labelPosition = .bottom
+    barChartView.legend.enabled = false
+    barChartView.drawGridBackgroundEnabled = false
+    xAxis.granularity = 1.0
+    xAxis.labelCount = 12
+    
+    barChartView.pinchZoomEnabled = false
+    barChartView.doubleTapToZoomEnabled = false
+    
+    barChartView.backgroundColor = .white
+    
+    // Graph X Axis and Right Axis Color
+    xAxis.axisLineColor = .clear//UIColor.black.withAlphaComponent(0.2)
+    xAxis.gridColor = .clear//UIColor.black.withAlphaComponent(0.2)
+    xAxis.labelTextColor = UIColor.black.withAlphaComponent(0.5)
+    rightAxis.gridColor = .clear//UIColor.black.withAlphaComponent(0.2)
+    rightAxis.axisLineColor = .clear//UIColor.black.withAlphaComponent(0.2)
+    rightAxis.labelTextColor = UIColor.black.withAlphaComponent(0.5)
+    
+    // Graph X Axis and Right Axis Font
+    rightAxis.labelFont = UIFont.systemFont(ofSize: 12)
+    xAxis.labelFont = UIFont.systemFont(ofSize: 12)
+    
+    rightAxis.drawZeroLineEnabled = false
+    rightAxis.drawAxisLineEnabled = false
+    barChartView.delegate = self
+  }
 ```
 
 We need to create 2 helper method `dataSetWith()` to create `BarChartDataSet` and `setupRightAxisFormatter` for formatting values with "%" suffix:
@@ -151,35 +152,35 @@ Create `setupCorner()` method and update `drawDataSet`, `drawHighlighted` method
 
 ```swift
     func setupCorner(context:CGContext, dataSet: IBarChartDataSet, index: Int, stackIndex:Int, barRect:CGRect) {
-        if let currentEntry = dataSet.entryForIndex(index) as? BarChartDataEntry {
-            let bezierPath = UIBezierPath(roundedRect: barRect, byRoundingCorners: [.allCorners], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
-            if currentEntry.yValues![stackIndex] == 0 || currentEntry.yValues![stackIndex] == 100 {
+    if let currentEntry = dataSet.entryForIndex(index) as? BarChartDataEntry {
+        let bezierPath = UIBezierPath(roundedRect: barRect, byRoundingCorners: [.allCorners], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+        if currentEntry.yValues![stackIndex] == 0 || currentEntry.yValues![stackIndex] == 100 {
+            let roundedPath = bezierPath.cgPath
+            context.addPath(roundedPath)
+            context.fillPath()
+        }
+        else {
+            if stackIndex == 0 {
+                let bezierPath = UIBezierPath(roundedRect: barRect, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
                 let roundedPath = bezierPath.cgPath
                 context.addPath(roundedPath)
                 context.fillPath()
             }
             else {
-                if stackIndex == 0 {
-                    let bezierPath = UIBezierPath(roundedRect: barRect, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
-                    let roundedPath = bezierPath.cgPath
-                    context.addPath(roundedPath)
-                    context.fillPath()
-                }
-                else {
-                    let bezierPath = UIBezierPath(roundedRect: barRect, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
-                    let roundedPath = bezierPath.cgPath
-                    context.addPath(roundedPath)
-                    context.fillPath()
-                }
+                let bezierPath = UIBezierPath(roundedRect: barRect, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+                let roundedPath = bezierPath.cgPath
+                context.addPath(roundedPath)
+                context.fillPath()
             }
         }
     }
+  }
 ```
 
 Update `setupVerticalChart()` method inorder to start using the corner-radius renderer.
 
 ```swift
-    barChartView.renderer = CornerRadiusStackBarRenderer(dataProvider: barChartView,
+  barChartView.renderer = CornerRadiusStackBarRenderer(dataProvider: barChartView,
                                                          animator: barChartView.chartAnimator,
                                                          viewPortHandler: barChartView.viewPortHandler)
 ```
