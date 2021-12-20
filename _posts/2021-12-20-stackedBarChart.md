@@ -11,7 +11,7 @@ In this article we will look into creating a corner-radius renderer for stacked 
 
 **Final Result :**
 
-![screenshot1](../../../../assets/Vertical_Stacked_Chart.png){: width="280" }
+![screenshot5](../../../../assets/Vertical_Stacked_Chart.png){: width="280" }
 
 Assuming you have already installed [Charts Library](https://github.com/danielgindi/Charts) by adding to Podfile of your project and imported Charts to required UIViewConntroller.
  
