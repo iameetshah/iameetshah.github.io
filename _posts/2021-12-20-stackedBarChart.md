@@ -7,14 +7,14 @@ layout: post
 ---
 
 In this article we will look into creating a corner-radius renderer for stacked bar chart.
-(Refer `Final Result` for screenshot after using corner-radius renderer).
+(Refer `Final Result` for screenshot after using corner-radius renderer). Assuming you have already installed 
+[Charts Library](https://github.com/danielgindi/Charts) by adding to Podfile of your project and imported Charts to required UIViewController.
+
 
 **Final Result :**
 
 ![screenshot5](../../../../assets/Vertical_Stacked_Chart.png){: width="280" }
 
-Assuming you have already installed [Charts Library](https://github.com/danielgindi/Charts) by adding to Podfile of your project and imported Charts to required UIViewConntroller.
- 
 Let’s start by creating required months and associated values. 
 
 ```swift
