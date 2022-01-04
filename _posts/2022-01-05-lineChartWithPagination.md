@@ -256,7 +256,7 @@ After creating `LineChartData` from `LineChartDataSet` we notify ChartView of da
         
         if !previousLineEntries.isEmpty {
             let previousLineDataSet = dataSetWith(entries: previousLineEntries,
-                                                  color: UIColor.blue,
+                                                  color: UIColor.red,
                                                   label: Constants.previousLineDataSetLabel)
             previousLineDataSet.axisDependency = .right
             var combinedData = LineChartData()
