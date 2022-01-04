@@ -12,7 +12,7 @@ In this article we will look into implementing pagination with line chart.
 
 **Final Result :**
 
-![screenshot6](../../../../assets/LineChartPaginate1.png){: width="240" } ![screenshot7](../../../../assets/LineChartPaginate2.png){: width="240" } ![screenshot8](../../../../assets/LineChartPaginate3.png){: width="240" }
+![screenshot6](../../../../assets/LineChartPaginate1.png){: width="200" } ![screenshot7](../../../../assets/LineChartPaginate2.png){: width="200" } ![screenshot8](../../../../assets/LineChartPaginate3.png){: width="200" }
 
 
 Let’s start by creating `SomeEntity` model :-
