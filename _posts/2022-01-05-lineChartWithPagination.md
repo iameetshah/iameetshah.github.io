@@ -220,7 +220,7 @@ Now we are ready to update Chart data based on dataSets. First we create two arr
 `currentLineEntries` & `previousLineEntries`. We append values to both by looping through dataSets. 
 For pagination, first we need to calcuate interval which is based on totalValue i.e. value computed at 
 backend divided by 30 (total count of values within dataSets). Next use `CustomValueFormatter` with 
-computedInterval & currency. Finally use setScaleMinima of lineChartView to 2.9 enabling pagination.
+computedInterval & currency. Finally setScaleMinima of lineChartView to 2.9 on X-axis thus enabling pagination.
 
 After creating `LineChartData` from `LineChartDataSet` we notify ChartView of dataSet modification with `lineChartView.notifyDataSetChanged()`:
 
