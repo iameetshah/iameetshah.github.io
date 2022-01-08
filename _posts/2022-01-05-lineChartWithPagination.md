@@ -6,7 +6,7 @@ category: Jekyll
 layout: post
 ---
 
-In this article we will look into implementing pagination with line chart.
+In this post we will look into one of the easiest approach for implementing pagination with line chart.
 (Refer `Final Result` for screenshots). Assuming you have already installed 
 [Charts Library](https://github.com/danielgindi/Charts) by adding to Podfile of your project and imported Charts to required UIViewController.
 

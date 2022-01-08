@@ -7,8 +7,8 @@ layout: post
 ---
 
 I have been searching for an tutorial in SwiftUI which explains how to make an collapsible header 
-while searching within sub header and after going through many articles, 
-finally managed to understand and got it working. So I decided to write an article 
+while searching within sub header and after going through many posts, articles,..etc
+finally managed to understand and got it working. So I decided to write an post 
 which will be informative and helpful to someone new to SwiftUI.
 
 **Final Result :**

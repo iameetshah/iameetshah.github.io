@@ -6,7 +6,7 @@ category: Jekyll
 layout: post
 ---
 
-I decided to write an article about [Charts Library](https://github.com/danielgindi/Charts), 
+I decided to write an post about [Charts Library](https://github.com/danielgindi/Charts), 
 Specifically about how to create a x-axis custom renderer for horizontal bar chart. If we implement 
 horizontal bar chart without x-axis custom renderer, Alignment Issue shown in `Actual Result` will be observed. 
 Inorder to resolve this alignment issue, we need to use x-axis custom renderer 
@@ -206,7 +206,7 @@ so that on intialisation itself Horizontal Bar chart is first configured with re
     }
 ```
 
-If you compile the code and run you will observe the alignment issue mentioned at the start of this article (Refer 'Actual Result' for screenshots). 
+If you compile the code and run you will observe the alignment issue mentioned at the start of this post (Refer 'Actual Result' for screenshots). 
 Now, lets amend the code to use Renderer so that we can get the expected result. 
 
 Inorder to create `CustomHorizontalXAxisRenderer` we need to first jump to the definition of `XAxisRendererHorizontalBarChart` for `drawLabels` method. 

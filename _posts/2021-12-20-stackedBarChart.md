@@ -6,9 +6,9 @@ category: Jekyll
 layout: post
 ---
 
-Having received a custom requirement from designer, for which intially raised a [PR](https://github.com/danielgindi/Charts/pull/4532) 
-but eventually succeeded to customize so decided to write an article for same to help someone avoid same problems.
-In this article we will look into creating a corner-radius renderer for stacked bar chart.
+After receiving a UX design not supported by Library, for which intially raised a [PR](https://github.com/danielgindi/Charts/pull/4532) 
+but eventually succeeded to customize so decided to write an post for same to help someone avoid same problems.
+In this post we will look into creating a corner-radius renderer for stacked bar chart.
 (Refer `Final Result` for screenshot after using corner-radius renderer). Assuming you have already installed 
 [Charts Library](https://github.com/danielgindi/Charts) by adding to Podfile of your project and imported Charts to required UIViewController.
 
