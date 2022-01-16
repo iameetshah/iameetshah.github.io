@@ -26,7 +26,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: iameetshah
 #stackoverflow_username: 5272400/Meet // Not supported - https://github.com/jekyll/minima/issues/291
-linkedin_username: iameetshah
+#linkedin_username: iameetshah
 google_analytics: G-3WK2Y127FW
 # Build settings
 theme: minima
