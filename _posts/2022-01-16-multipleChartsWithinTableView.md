@@ -114,7 +114,7 @@ class LineChartForDemo: LineChartView {
     }
 ```
 
-Next we will create `VerticalChartForDemo`. 
+Next we will create `VerticalChartForDemo` :-
 
 ```swift
 import Charts
@@ -218,7 +218,7 @@ class VerticalChartForDemo: BarChartView {
 }
 ```
 
-Finally we will create `HorizontalBarChartView`:-
+Lastly we will create `HorizontalBarChartView`:-
 
 ```swift
 import Charts
@@ -386,6 +386,7 @@ class TableViewCell: UITableViewCell {
     }
 }
 ```
+
 Now, go to required ViewController to register `TableViewCell` & setup `UITableViewDataSource` methods :             
 
 ```swift
