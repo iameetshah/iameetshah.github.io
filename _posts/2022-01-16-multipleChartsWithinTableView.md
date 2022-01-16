@@ -12,7 +12,7 @@ In this post we will look into one of the practical approaches for implementing 
 
 **Final Result :**
 
-![screenshot9](../../../../assets/LineChartPaginate1.png){: width="200" } ![screenshot10](../../../../assets/LineChartPaginate2.png){: width="200" }
+![screenshot9](../../../../assets/MultipleChart1.png){: width="200" } ![screenshot10](../../../../assets/MultipleChart2.png){: width="200" }
 
 
 Let’s start by creating `LineChartForDemo` :-
