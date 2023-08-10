@@ -7,7 +7,7 @@ permalink: /about/
 
 
 I am a iOS Developer based in India, focused on developing robust code since 2014. 
-I like to share posts with solutions related to issues faced during development apart from creating sample-projects
+I like to share posts with solutions related to issues faced during development with the help of sample-projects
 
 {% comment %}
 You can find the source code for Minima at GitHub:
